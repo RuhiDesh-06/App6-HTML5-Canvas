@@ -17,9 +17,10 @@ Timothy Riedel
 triedel@utexas.edu
  
 Brief Description of Goal of Code:
-
+This creates a web page with multiple buttons that trigger the appearance of different objects. 
  
 Known Issues:
+no known issues
 
 https://www.w3schools.com/w3css/default.asp
 https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
@@ -45,22 +46,25 @@ function getCanvas() {
     return canvas.getContext("2d");
 }
 
+//this function draws this rectangle
 function drawRect() {
-    var draw = getCanvas();
+    var draw = getCanvas(); //retrievs the canvas element
     draw.fillStyle = "#FF0000"; // Red color
     draw.fillRect(50, 50, 150, 100); // (x, y, width, height)
 }
 
+//this function writes my name	
 function drawName() {
-    var name = getCanvas();
+    var name = getCanvas(); //retrievs the canvas element
     name.font = "30px Arial";
     name.fillStyle = "black";
     name.fillText("Ruhi", 60, 110); 
 }
 
+//this function draws an image of a mask	
 function drawImage() {
-    var get = getCanvas();
-    var img = new Image();
+    var get = getCanvas(); //retrievs the canvas element
+    var img = new Image(); //variable for the image
 	img.src = "mask.jpg";
     img.onload = function() {
         get.drawImage(img, 10, 10, 100, 100); // Draws image at x:10, y:10
@@ -68,6 +72,7 @@ function drawImage() {
     
 }
 
+//this function clears the canvas
 function clearCanvas() {
     var canvas = document.getElementById("myCanvas");
     var temp = canvas.getContext("2d");
@@ -112,7 +117,7 @@ canvas {
 	
 <div id="content" class="w3-container">
     <canvas id="myCanvas" width="300" height="200"></canvas>
-    
+<--- This section creates the buttons and assigns them to call the corresponding function!--->
     <div class="w3-center">
         <button onclick="drawRect()" class="w3-button w3-blue w3-round">Draw Rectangle</button>
         <button onclick="drawName()" class="w3-button w3-green w3-round">Draw Name</button>
