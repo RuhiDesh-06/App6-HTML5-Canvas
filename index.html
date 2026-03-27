@@ -7,7 +7,7 @@ THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.
  
 Authors in chronological order of contribution:
 Tim Riedel
-Author 2
+Ruhi Deshpande
  
 Further Information:
 http://cns.utexas.edu/fri
@@ -17,10 +17,10 @@ Timothy Riedel
 triedel@utexas.edu
  
 Brief Description of Goal of Code:
-blah, blah, blah,
+
  
 Known Issues:
-blah, blah, blah, blah
+
 https://www.w3schools.com/w3css/default.asp
 https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
 -->
@@ -38,6 +38,41 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 var docMod = document.lastModified; // loads last modified time stamp into docMod variable
 alert("This file last modified " + docMod); // generates alert box with time stamp. If annoying, comment out this entire line.
 console.log("This file last modified " + docMod); // generates message in javaScript console (found in developers tools) with time stamp. 
+
+//this function gets the canvas
+function getCanvas() {
+    var canvas = document.getElementById("myCanvas");
+    return canvas.getContext("2d");
+
+function drawRect() {
+    var draw = getCanvas();
+    draw.fillStyle = "#FF0000"; // Red color
+    draw.fillRect(50, 50, 150, 100); // (x, y, width, height)
+}
+
+function drawName() {
+    var name = getCanvasContext();
+    name.font = "30px Arial";
+    name.fillStyle = "black";
+    name.fillText("Ruhi", 60, 110); 
+}
+
+function drawImage() {
+    var get = getCanvasContext();
+    var img = new Image();
+    img.onload = function() {
+        ctx.drawImage(img, 10, 10, 100, 100); // Draws image at x:10, y:10
+    };
+    
+    img.src = "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png";
+}
+
+function clearCanvas() {
+    var canvas = document.getElementById("myCanvas");
+    var temp = canvas.getContext("2d");
+    temp.clearRect(0, 0, canvas.width, canvas.height);
+}
+	
 </script>
 
 
@@ -59,6 +94,13 @@ console.log("This file last modified " + docMod); // generates message in javaSc
   .page:target {
     left: 0vw;
     z-index: 1;
+}
+
+canvas {
+    border: 2px solid #000000;
+    display: block;
+    margin: 10px auto; /* Centers the canvas */
+    background-color: #fff;
 }
 </style>
 
