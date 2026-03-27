@@ -62,7 +62,7 @@ function drawImage() {
     var get = getCanvas();
     var img = new Image();
     img.onload = function() {
-        ctx.drawImage(img, 10, 10, 100, 100); // Draws image at x:10, y:10
+        get.drawImage(img, 10, 10, 100, 100); // Draws image at x:10, y:10
     };
     
     img.src = "mask.jpg";
